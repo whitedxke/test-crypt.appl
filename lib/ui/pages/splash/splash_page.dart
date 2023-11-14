@@ -1,11 +1,45 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../../core/resources/color_resource.dart';
 import '../../../core/resources/strings/string_resource.dart';
 import '../../widgets/parent_widget.dart';
+import '../onboarding/onboarding_page.dart';
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
+
+  @override
+  State<SplashPage> createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> {
+  @override
+  void initState() {
+    _startDelayNavigation();
+
+    super.initState();
+  }
+
+  void _startDelayNavigation() {
+    const delay = Duration(seconds: 4);
+
+    Future.delayed(
+      delay,
+      _navigateToOnboardingPage,
+    );
+  }
+
+  void _navigateToOnboardingPage() {
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const OnboardingPage(),
+      ),
+      (route) => false,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
