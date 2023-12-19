@@ -37,11 +37,9 @@ class _SplashPageState extends State<SplashPage> {
       body: Align(
         alignment: Alignment.center,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(
-            16.0,
-            0,
-            16.0,
-            0,
+          padding: EdgeInsets.symmetric(
+            horizontal: 16.w,
+            vertical: 0.h,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -56,28 +54,28 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Widget _buildDescriptionText() {
-    return const Text(
+    return Text(
       StringResource.splashDescriptionText,
       style: TextStyle(
-        fontSize: 14.0,
+        fontSize: 14.sp,
         color: ColorResource.white,
       ),
     );
   }
 
   Widget _buildLoadingIndicator() {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.fromLTRB(
-        16.0,
-        60.0,
-        16.0,
-        10.0,
+        16.w,
+        60.h,
+        16.w,
+        10.h,
       ),
       child: SizedBox(
-        height: 24.0,
-        width: 24.0,
+        height: 24.h,
+        width: 24.w,
         child: CircularProgressIndicator(
-          strokeWidth: 2.6,
+          strokeWidth: 2.6.w,
           color: ColorResource.white,
         ),
       ),
