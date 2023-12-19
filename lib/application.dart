@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
-import 'ui/pages/splash/splash_page.dart';
+import 'core/navigation/application_router.dart';
 
 class Application extends StatelessWidget {
-  const Application({Key? key}) : super(key: key);
+  Application({Key? key}) : super(key: key);
+
+  final _applicationRouter = ApplicationRouter();
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp.router(
+      routerConfig: _applicationRouter.config(),
       debugShowCheckedModeBanner: false,
-      home: SplashPage(),
     );
   }
 }
