@@ -1,16 +1,7 @@
 import 'index.dart';
 
-part 'splash_view.description_text.part.dart';
-part 'splash_view.loading_indicator.part.dart';
-
 class SplashView extends StatefulWidget {
-  final SplashViewProtocol _delegate;
-
-  const SplashView({
-    Key? key,
-    required SplashViewProtocol delegate,
-  })  : _delegate = delegate,
-        super(key: key);
+  const SplashView({Key? key}) : super(key: key);
 
   @override
   State<SplashView> createState() => _SplashViewState();
@@ -33,35 +24,69 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    final delegate = widget._delegate;
-    return BlocListener<SplashBloc, SplashState>(
-      listener: (context, state) {
-        if (state is NavigateToOnboardingState) {
-          delegate.navigateToOnboardingPage();
-        }
-      },
-      child: ParentWidget(
-        body: Align(
+    return ParentWidget(
+      body: SafeArea(
+        child: Stack(
           alignment: Alignment.center,
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 16.w,
-              vertical: 0.h,
-            ),
-            child: Column(
+          children: [
+            _buildBrandIdentityWidget(),
+            Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                _buildDescriptionText(),
-                _buildLoadingIndicator(),
+                Text(
+                  StringResource.splashDescriptionText,
+                  style: TextStyleResource.secondary14(
+                    weight: FontWeight.w400,
+                    height: TextLineHeightResource.description,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(
+                    16.w,
+                    40.h,
+                    16.w,
+                    16.h,
+                  ),
+                  child: SizedBox(
+                    height: 24.h,
+                    width: 24.w,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2.6.w,
+                      color: ColorResource.white,
+                    ),
+                  ),
+                ),
               ],
             ),
-          ),
+          ],
         ),
       ),
     );
   }
 }
 
-abstract class SplashViewProtocol {
-  void navigateToOnboardingPage();
+Widget _buildBrandIdentityWidget() {
+  return Align(
+    alignment: Alignment.center,
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SvgPicture.asset(
+          ImageResource.icLogotype,
+          width: 80.w,
+          height: 120.h,
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        Text(
+          StringResource.splashTitleText,
+          style: TextStyleResource.secondary26(
+            weight: FontWeight.w500,
+            height: TextLineHeightResource.title,
+          ),
+        ),
+      ],
+    ),
+  );
 }
