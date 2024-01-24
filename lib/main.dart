@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-import 'application.dart';
+import 'index.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

@@ -13,6 +13,11 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: 1.0.2
+
+  # UI.
+  flutter_svg: 2.0.9
+
+  # Model.
   equatable: 2.0.5
 
   # Navigation.
@@ -41,6 +46,7 @@ flutter:
     - assets/images/
     - assets/fonts/
     - assets/icons/
+    - assets/animations/
 
   fonts:
     - family: Montserrat

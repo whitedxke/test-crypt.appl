@@ -9,31 +9,26 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+
+  void _navigateToOnboardingPage() {
+    context.router.pushAndPopUntil(
+      const OnboardingRoute(),
+      predicate: (context) => true,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider.value(
       value: BlocProvider.of<SplashBloc>(context),
-      child: SplashView(
-        delegate: SplashPageDelegate(
-          context: context,
-        ),
+      child: BlocListener<SplashBloc, SplashState>(
+        listener: (context, state) {
+          if (state is NavigateToOnboardingState) {
+            _navigateToOnboardingPage();
+          }
+        },
+        child: const SplashView(),
       ),
-    );
-  }
-}
-
-class SplashPageDelegate implements SplashViewProtocol {
-  final BuildContext context;
-
-  const SplashPageDelegate({
-    required this.context,
-  });
-
-  @override
-  void navigateToOnboardingPage() {
-    context.router.pushAndPopUntil(
-      const OnboardingRoute(),
-      predicate: (context) => true,
     );
   }
 }

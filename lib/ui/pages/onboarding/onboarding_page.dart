@@ -1,7 +1,4 @@
-import 'package:auto_route/annotations.dart';
-import 'package:flutter/material.dart';
-
-import '../../widgets/parent_widget.dart';
+import 'index.dart';
 
 @RoutePage()
 class OnboardingPage extends StatelessWidget {
@@ -9,8 +6,6 @@ class OnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ParentWidget(
-      body: Container(),
-    );
+    return const OnboardingView();
   }
 }

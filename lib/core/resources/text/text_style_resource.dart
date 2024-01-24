@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../color_resource.dart';
-
-import 'text_family_resource.dart';
-import 'text_line_height_resource.dart';
-import 'text_size_resource.dart';
+import 'index.dart';
 
 class TextStyleResource {
   static final TextStyle _base = TextStyle(
@@ -67,6 +61,34 @@ class TextStyleResource {
     ).merge(
       TextStyle(
         fontSize: TextSizeResource.fontSize12,
+      ),
+    );
+  }
+
+  static TextStyle secondary14({
+    required FontWeight weight,
+    required TextLineHeightResource height,
+  }) {
+    return secondary10(
+      weight: weight,
+      height: height,
+    ).merge(
+      TextStyle(
+        fontSize: TextSizeResource.fontSize14,
+      ),
+    );
+  }
+
+  static TextStyle secondary26({
+    required FontWeight weight,
+    required TextLineHeightResource height,
+  }) {
+    return secondary10(
+      weight: weight,
+      height: height,
+    ).merge(
+      TextStyle(
+        fontSize: TextSizeResource.fontSize26,
       ),
     );
   }
