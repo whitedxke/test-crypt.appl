@@ -11,14 +11,12 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     context.read<SplashBloc>().add(StartDelayNavigationEvent());
-
     super.initState();
   }
 
   @override
   void dispose() {
     context.read<SplashBloc>().close();
-
     super.dispose();
   }
 
