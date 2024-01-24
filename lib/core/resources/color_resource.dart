@@ -1,4 +1,4 @@
-import 'dart:ui';
+import 'index.dart';
 
 class ColorResource {
   static const black = Color(0xFF222325);
