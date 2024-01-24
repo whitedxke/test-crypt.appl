@@ -13,6 +13,8 @@ class ApplicationRouter extends _$ApplicationRouter {
           page: SplashRoute.page,
           initial: true,
         ),
-        AutoRoute(page: OnboardingRoute.page),
+        AutoRoute(
+          page: OnboardingRoute.page,
+        ),
       ];
 }
