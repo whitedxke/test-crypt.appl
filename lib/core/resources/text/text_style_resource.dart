@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../color_resource.dart';
-
-import 'text_family_resource.dart';
-import 'text_line_height_resource.dart';
-import 'text_size_resource.dart';
+import 'index.dart';
 
 class TextStyleResource {
   static final TextStyle _base = TextStyle(
