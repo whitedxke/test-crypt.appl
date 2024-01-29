@@ -1,5 +1,7 @@
 import 'index.dart';
 
+part 'componets/splash_view.brand_identity.part.dart';
+
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);
 
@@ -43,7 +45,9 @@ class _SplashViewState extends State<SplashView> {
                     16.w,
                     40.h,
                     16.w,
-                    16.h,
+                    ConstraintsHelper.getBottomWidgetInset(
+                      inset: 16.h,
+                    ),
                   ),
                   child: SizedBox(
                     height: 24.h,
@@ -63,28 +67,4 @@ class _SplashViewState extends State<SplashView> {
   }
 }
 
-Widget _buildBrandIdentityWidget() {
-  return Align(
-    alignment: Alignment.center,
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SvgPicture.asset(
-          ImageResource.icLogotype,
-          width: 80.w,
-          height: 120.h,
-        ),
-        SizedBox(
-          height: 10.h,
-        ),
-        Text(
-          StringResource.splashTitleText,
-          style: TextStyleResource.secondary26(
-            weight: FontWeight.w500,
-            height: TextLineHeightResource.title,
-          ),
-        ),
-      ],
-    ),
-  );
-}
+abstract class SplashProtocol {}
