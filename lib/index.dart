@@ -12,4 +12,5 @@ export 'package:flutter_screenutil/flutter_screenutil.dart';
 
 export 'core/navigation/application_router.dart';
 export 'ui/pages/splash/bloc/splash_bloc.dart';
+export 'ui/pages/onboarding/bloc/onboarding_bloc.dart';
 export 'application.dart';

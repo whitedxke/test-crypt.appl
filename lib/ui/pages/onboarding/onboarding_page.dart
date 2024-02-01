@@ -9,8 +9,11 @@ class OnboardingPage extends StatelessWidget {
     OnboardingDelegate delegate = OnboardingDelegate(
       context: context,
     );
-    return OnboardingView(
-      protocol: delegate,
+    return BlocProvider.value(
+      value: BlocProvider.of<OnboardingBloc>(context),
+      child: OnboardingView(
+        protocol: delegate,
+      ),
     );
   }
 }
@@ -23,5 +26,5 @@ class OnboardingDelegate extends OnboardingProtocol {
   });
 
   @override
-  void skipTheOnboardingPage() {}
+  void navigateToContinue() {}
 }

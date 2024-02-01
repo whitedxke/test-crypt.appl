@@ -1,10 +1,10 @@
 extension DoubleExtensions on double? {
-  double? orEmpty() {
+  double orEmpty() {
     final double? result;
     if (this == null) {
       result = 0;
     } else {
-      result = this;
+      result = this!;
     }
     return result;
   }

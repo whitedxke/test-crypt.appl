@@ -36,9 +36,10 @@ class SplashDelegate implements SplashProtocol {
   });
 
   void navigateToOnboardingPage() {
-    context.router.pushAndPopUntil(
-      const OnboardingRoute(),
-      predicate: (context) => true,
+    context.router.replaceAll(
+      [
+        const OnboardingRoute(),
+      ],
     );
   }
 }

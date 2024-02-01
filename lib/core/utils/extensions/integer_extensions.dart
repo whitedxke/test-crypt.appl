@@ -1,10 +1,10 @@
 extension IntegerExtensions on int? {
-  int? orEmpty() {
+  int orEmpty() {
     final int? result;
     if (this == null) {
       result = 0;
     } else {
-      result = this;
+      result = this!;
     }
     return result;
   }

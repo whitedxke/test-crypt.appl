@@ -17,12 +17,6 @@ class _SplashViewState extends State<SplashView> {
   }
 
   @override
-  void dispose() {
-    context.read<SplashBloc>().close();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return ParentWidget(
       body: SafeArea(
