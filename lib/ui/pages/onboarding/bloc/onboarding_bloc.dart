@@ -4,6 +4,8 @@ part 'onboarding_event.dart';
 part 'onboarding_state.dart';
 
 class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
+  final OnboardingRepository _repository = OnboardingRepository.getInstance();
+
   OnboardingBloc() : super(OnboardingInitial()) {
     on<LoadOnboardingEvent>((event, emit) {
       _calculateLoadOnboardingEvent(
@@ -21,7 +23,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   void _calculateLoadOnboardingEvent({
     required Emitter<OnboardingState> emit,
   }) {
-    final onboardings = Onboarding.getOnboardingModel();
+    final onboardings = _repository.getOnboardingModel();
     emit(OnboardingLoadedState(
       onboardings: onboardings,
       currentIndex: 0,
