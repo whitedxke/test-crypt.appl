@@ -26,5 +26,11 @@ class OnboardingDelegate extends OnboardingProtocol {
   });
 
   @override
-  void navigateToContinue() {}
+  void navigateToContinue() {
+    context.router.replaceAll(
+      [
+        const GreetingRoute(),
+      ],
+    );
+  }
 }
