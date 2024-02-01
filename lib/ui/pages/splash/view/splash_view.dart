@@ -1,16 +1,9 @@
 import 'index.dart';
 
-part 'splash_view.description_text.part.dart';
-part 'splash_view.loading_indicator.part.dart';
+part 'componets/splash_view.brand_identity.part.dart';
 
 class SplashView extends StatefulWidget {
-  final SplashViewProtocol _delegate;
-
-  const SplashView({
-    Key? key,
-    required SplashViewProtocol delegate,
-  })  : _delegate = delegate,
-        super(key: key);
+  const SplashView({Key? key}) : super(key: key);
 
   @override
   State<SplashView> createState() => _SplashViewState();
@@ -20,48 +13,52 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     context.read<SplashBloc>().add(StartDelayNavigationEvent());
-
     super.initState();
   }
 
   @override
-  void dispose() {
-    context.read<SplashBloc>().close();
-
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    final delegate = widget._delegate;
-    return BlocListener<SplashBloc, SplashState>(
-      listener: (context, state) {
-        if (state is NavigateToOnboardingState) {
-          delegate.navigateToOnboardingPage();
-        }
-      },
-      child: ParentWidget(
-        body: Align(
+    return ParentWidget(
+      body: SafeArea(
+        child: Stack(
           alignment: Alignment.center,
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 16.w,
-              vertical: 0.h,
-            ),
-            child: Column(
+          children: [
+            _buildBrandIdentityWidget(),
+            Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                _buildDescriptionText(),
-                _buildLoadingIndicator(),
+                Text(
+                  StringResource.splashDescriptionText,
+                  style: TextStyleResource.secondary14(
+                    weight: FontWeight.w400,
+                    height: TextLineHeightResource.description,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(
+                    16.w,
+                    40.h,
+                    16.w,
+                    ConstraintsHelper.getBottomWidgetInset(
+                      inset: 16.h,
+                    ),
+                  ),
+                  child: SizedBox(
+                    height: 24.h,
+                    width: 24.w,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2.6.w,
+                      color: ColorResource.white,
+                    ),
+                  ),
+                ),
               ],
             ),
-          ),
+          ],
         ),
       ),
     );
   }
 }
 
-abstract class SplashViewProtocol {
-  void navigateToOnboardingPage();
-}
+abstract class SplashProtocol {}
