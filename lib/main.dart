@@ -8,6 +8,9 @@ void main() {
       DeviceOrientation.portraitDown,
     ],
   );
+  GetIt.instance.registerSingleton<OnboardingRepository>(
+    OnboardingRepository.getInstance(),
+  );
 
   runApp(
     Application(),

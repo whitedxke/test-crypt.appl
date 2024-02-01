@@ -1,10 +1,10 @@
 extension StringExtensions on String? {
-  String? orEmpty() {
+  String orEmpty() {
     final String? result;
     if (this == null) {
       result = '';
     } else {
-      result = this;
+      result = this!;
     }
     return result;
   }

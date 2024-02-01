@@ -79,6 +79,20 @@ class TextStyleResource {
     );
   }
 
+  static TextStyle secondary18({
+    required FontWeight weight,
+    required TextLineHeightResource height,
+  }) {
+    return secondary10(
+      weight: weight,
+      height: height,
+    ).merge(
+      TextStyle(
+        fontSize: TextSizeResource.fontSize18,
+      ),
+    );
+  }
+
   static TextStyle secondary26({
     required FontWeight weight,
     required TextLineHeightResource height,

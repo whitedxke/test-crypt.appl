@@ -16,6 +16,9 @@ class Application extends StatelessWidget {
       ),
       child: MultiBlocProvider(
         providers: [
+          BlocProvider<OnboardingBloc>(
+            create: (context) => OnboardingBloc(),
+          ),
           BlocProvider<SplashBloc>(
             create: (context) => SplashBloc(),
           ),

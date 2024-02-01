@@ -4,4 +4,4 @@ export 'package:flutter/material.dart';
 
 // ---- Components.
 
-export '../../core/resources/color_resource.dart';
+export '../../../core/resources/color_resource.dart';

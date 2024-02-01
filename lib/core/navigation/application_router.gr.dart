@@ -13,6 +13,12 @@ abstract class _$ApplicationRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    GreetingRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const GreetingPage(),
+      );
+    },
     OnboardingRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -29,7 +35,21 @@ abstract class _$ApplicationRouter extends RootStackRouter {
 }
 
 /// generated route for:
-/// [OnboardingPage]
+/// [GreetingPage].
+class GreetingRoute extends PageRouteInfo<void> {
+  const GreetingRoute({List<PageRouteInfo>? children})
+      : super(
+          GreetingRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'GreetingRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for:
+/// [OnboardingPage].
 class OnboardingRoute extends PageRouteInfo<void> {
   const OnboardingRoute({List<PageRouteInfo>? children})
       : super(
@@ -43,7 +63,7 @@ class OnboardingRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for:
-/// [SplashPage]
+/// [SplashPage].
 class SplashRoute extends PageRouteInfo<void> {
   const SplashRoute({List<PageRouteInfo>? children})
       : super(
