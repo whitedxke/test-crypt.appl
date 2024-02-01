@@ -11,6 +11,7 @@ void main() {
   GetIt.instance.registerSingleton<OnboardingRepository>(
     OnboardingRepository.getInstance(),
   );
+  Bloc.observer = ApplicationBlocObserver();
 
   runApp(
     Application(),
