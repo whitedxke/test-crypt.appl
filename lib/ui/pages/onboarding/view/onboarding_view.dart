@@ -1,6 +1,6 @@
 import 'index.dart';
 
-part 'components/onboarding_veiw.loading_indicator.part.dart';
+part 'components/onboarding_view.loading_indicator.part.dart';
 part 'components/onboarding_view.onboarding_item.part.dart';
 
 class OnboardingView extends StatefulWidget {
