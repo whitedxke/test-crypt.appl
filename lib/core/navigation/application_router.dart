@@ -16,5 +16,8 @@ class ApplicationRouter extends _$ApplicationRouter {
         AutoRoute(
           page: GreetingRoute.page,
         ),
+        AutoRoute(
+          page: SignUpRoute.page,
+        ),
       ];
 }
