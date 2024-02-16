@@ -15,37 +15,45 @@ class GreetingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ParentWidget(
-      body: Padding(
-        padding: EdgeInsets.only(
-          left: 16.w,
-          top: 0.w,
-          right: 16.w,
-          bottom: ConstraintsHelper.getBottomWidgetInset(
-            inset: 16.h,
-          ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.start,
+      body: SafeArea(
+        child: Stack(
+          alignment: Alignment.center,
           children: [
-            _buildWelcomeTextWidget(),
+            const BrandIdentityWidget(),
             Padding(
               padding: EdgeInsets.only(
                 left: 16.w,
-                top: 40.h,
+                top: 0.w,
                 right: 16.w,
+                bottom: ConstraintsHelper.getBottomWidgetInset(
+                  inset: 16.h,
+                ),
               ),
-              child: MaterialButtonWidget(
-                title: StringResource.greetingSignUpButtonTitleText,
-                onTap: () {
-                  _protocol.navigateToSignUp();
-                },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildWelcomeTextWidget(),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 16.w,
+                      top: 40.h,
+                      right: 16.w,
+                    ),
+                    child: MaterialButtonWidget(
+                      title: StringResource.greetingSignUpButtonTitleText,
+                      onTap: () {
+                        _protocol.navigateToSignUp();
+                      },
+                    ),
+                  ),
+                  _buildSignButtonWidget(
+                    onTap: () {
+                      _protocol.navigateToSignIn();
+                    },
+                  ),
+                ],
               ),
-            ),
-            _buildSignButtonWidget(
-              onTap: () {
-                _protocol.navigateToSignIn();
-              },
             ),
           ],
         ),

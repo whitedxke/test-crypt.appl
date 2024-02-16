@@ -2,6 +2,7 @@ part of '../greeting_view.dart';
 
 Widget _buildWelcomeTextWidget() {
   return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Text(
         StringResource.greetingTitleText,
