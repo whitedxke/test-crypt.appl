@@ -37,4 +37,11 @@ class StringResource {
   static const signInRecoveryPasswordButtonTitleText = 'Recovery Password';
   static const signInEmailLabelText = 'E-mail';
   static const signInPasswordLabelText = 'Password';
+
+  // ---- Recovery Page.
+
+  static const recoveryTitleText = 'Now we\'ll fix it, just a moment.';
+  static const recoveryDescriptionText = 'Let\'s recover your forgotten password so you can sign in, and unlock all the features of the application.';
+  static const recoveryContinueButtonTitleText = 'Continue';
+  static const recoveryEmailLabelText = 'E-mail';
 }
