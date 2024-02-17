@@ -21,7 +21,9 @@ class _SplashViewState extends State<SplashView> {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            const BrandIdentityWidget(),
+            const BrandIdentityWidget(
+              isAxisAligned: false,
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

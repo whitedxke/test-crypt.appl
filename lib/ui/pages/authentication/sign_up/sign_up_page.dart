@@ -24,4 +24,10 @@ class SignUpDelegate extends SignUpProtocol {
   SignUpDelegate({
     required this.context,
   });
+
+  @override
+  void navigateToPrivacyPolicy() {}
+
+  @override
+  void navigateToContinue() {}
 }

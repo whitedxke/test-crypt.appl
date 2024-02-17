@@ -19,7 +19,9 @@ class GreetingView extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            const BrandIdentityWidget(),
+            const BrandIdentityWidget(
+              isAxisAligned: false,
+            ),
             Padding(
               padding: EdgeInsets.only(
                 left: 16.w,

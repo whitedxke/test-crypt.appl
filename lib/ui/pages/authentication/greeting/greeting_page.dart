@@ -24,10 +24,8 @@ class GreetingDelegate extends GreetingProtocol {
 
   @override
   void navigateToSignUp() {
-    context.router.replaceAll(
-      [
-        const SignUpRoute(),
-      ],
+    context.router.push(
+      const SignUpRoute(),
     );
   }
 
