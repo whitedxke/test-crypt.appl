@@ -93,6 +93,20 @@ class TextStyleResource {
     );
   }
 
+  static TextStyle secondary24({
+    required FontWeight weight,
+    required TextLineHeightResource height,
+  }) {
+    return secondary10(
+      weight: weight,
+      height: height,
+    ).merge(
+      TextStyle(
+        fontSize: TextSizeResource.fontSize24,
+      ),
+    );
+  }
+
   static TextStyle secondary26({
     required FontWeight weight,
     required TextLineHeightResource height,
@@ -103,6 +117,36 @@ class TextStyleResource {
     ).merge(
       TextStyle(
         fontSize: TextSizeResource.fontSize26,
+      ),
+    );
+  }
+
+  // ---- Green.
+
+  static TextStyle green10({
+    required FontWeight weight,
+    required TextLineHeightResource height,
+  }) {
+    return primary10(
+      weight: weight,
+      height: height,
+    ).merge(
+      const TextStyle(
+        color: ColorResource.green,
+      ),
+    );
+  }
+
+  static TextStyle green16({
+    required FontWeight weight,
+    required TextLineHeightResource height,
+  }) {
+    return green10(
+      weight: weight,
+      height: height,
+    ).merge(
+      TextStyle(
+        fontSize: TextSizeResource.fontSize16,
       ),
     );
   }

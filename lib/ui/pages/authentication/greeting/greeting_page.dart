@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../../../core/navigation/index.dart';
-import '../../../widgets/other/parent_widget.dart';
+import 'index.dart';
 
 @RoutePage()
 class GreetingPage extends StatelessWidget {
@@ -9,8 +6,33 @@ class GreetingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ParentWidget(
-      body: Container(),
+    GreetingDelegate delegate = GreetingDelegate(
+      context: context,
+    );
+    return GreetingView(
+      protocol: delegate,
+    );
+  }
+}
+
+class GreetingDelegate extends GreetingProtocol {
+  final BuildContext context;
+
+  GreetingDelegate({
+    required this.context,
+  });
+
+  @override
+  void navigateToSignUp() {
+    context.router.push(
+      const SignUpRoute(),
+    );
+  }
+
+  @override
+  void navigateToSignIn() {
+    context.router.push(
+      const SignInRoute(),
     );
   }
 }
