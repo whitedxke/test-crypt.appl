@@ -8,4 +8,4 @@ export 'package:auto_route/annotations.dart';
 
 // ---- Components.
 
-export 'view/sign_up_view.dart';
+export 'view/sign_in_view.dart';

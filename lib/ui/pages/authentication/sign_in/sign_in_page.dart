@@ -1,29 +1,30 @@
 import 'index.dart';
 
 @RoutePage()
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class SignInPage extends StatelessWidget {
+  const SignInPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    SignUpDelegate delegate = SignUpDelegate(
+    SignInDelegate delegate = SignInDelegate(
       context: context,
     );
-    return SignUpView(
+    return SignInView(
       protocol: delegate,
     );
   }
 }
 
-class SignUpDelegate extends SignUpProtocol {
+
+class SignInDelegate extends SignInProtocol {
   final BuildContext context;
 
-  SignUpDelegate({
+  SignInDelegate({
     required this.context,
   });
 
   @override
-  void navigateToPrivacyPolicy() {}
+  void navigateToRecoveryPassword() {}
 
   @override
   void navigateToContinue() {}

@@ -30,5 +30,9 @@ class GreetingDelegate extends GreetingProtocol {
   }
 
   @override
-  void navigateToSignIn() {}
+  void navigateToSignIn() {
+    context.router.push(
+      const SignInRoute(),
+    );
+  }
 }
