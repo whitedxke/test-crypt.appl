@@ -17,4 +17,3 @@ export '../../../../widgets/button/material_button_widget.dart';
 export '../../../../widgets/button/text_button_widget.dart';
 export '../../../../widgets/other/parent_widget.dart';
 export '../../../../widgets/other/brand_identity_widget.dart';
-

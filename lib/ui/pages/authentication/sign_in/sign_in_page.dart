@@ -15,7 +15,6 @@ class SignInPage extends StatelessWidget {
   }
 }
 
-
 class SignInDelegate extends SignInProtocol {
   final BuildContext context;
 
@@ -24,7 +23,11 @@ class SignInDelegate extends SignInProtocol {
   });
 
   @override
-  void navigateToRecoveryPassword() {}
+  void navigateToRecoveryPassword() {
+    context.router.push(
+      const RecoveryRoute(),
+    );
+  }
 
   @override
   void navigateToContinue() {}
