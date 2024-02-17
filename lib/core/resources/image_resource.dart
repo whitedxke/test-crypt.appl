@@ -16,5 +16,6 @@ class ImageResource {
 
   static const icLogotype = '$_baseIconPath/ic_logotype.svg';
 
-// ----Animation.
+  // ----Animation.
+
 }

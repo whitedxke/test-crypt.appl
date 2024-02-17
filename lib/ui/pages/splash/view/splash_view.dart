@@ -1,7 +1,5 @@
 import 'index.dart';
 
-part 'componets/splash_view.brand_identity.part.dart';
-
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);
 
@@ -23,7 +21,9 @@ class _SplashViewState extends State<SplashView> {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            _buildBrandIdentityWidget(),
+            const BrandIdentityWidget(
+              isAxisAligned: false,
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
