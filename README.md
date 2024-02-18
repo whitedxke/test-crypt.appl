@@ -10,7 +10,9 @@ Perhaps in the future the possibility of integrating the server side will be con
 
 <table>
   <tr>
-    <td><img src="resources/splash-page.png" width="320" height="640"></td>
+    <td><img src="resources/splash-page.png"></td>
+    <td><img src="resources/test-crypt.appl.png"></td>
+    <td><img src="resources/test-crypt.appl.png"></td>
   </tr>
 </table>
 
@@ -26,15 +28,17 @@ Perhaps in the future the possibility of integrating the server side will be con
 
 <table>
   <tr>
-    <td><img src="resources/greeting-page.png" width="320" height="640"></td>
-    <td><img src="resources/recovery-page.png" width="320" height="640"></td>
+    <td><img src="resources/greeting-page.png"></td>
+    <td><img src="resources/test-crypt.appl.png"></td>
+    <td><img src="resources/test-crypt.appl.png"></td>
   </tr>
 </table>
 
 
 <table>
   <tr>
-    <td><img src="resources/sign-up-page.png" width="320" height="640"></td>
-    <td><img src="resources/sign-in-page.png" width="320" height="640"></td>
+    <td><img src="resources/sign-up-page.png"></td>
+    <td><img src="resources/sign-in-page.png"></td>
+    <td><img src="resources/recovery-page.png"></td>
   </tr>
 </table>
