@@ -2,6 +2,7 @@ import 'index.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = ApplicationBlocObserver();
   SystemChrome.setPreferredOrientations(
     [
       DeviceOrientation.portraitUp,
@@ -11,7 +12,6 @@ void main() {
   GetIt.instance.registerSingleton<OnboardingRepository>(
     OnboardingRepository.getInstance(),
   );
-  Bloc.observer = ApplicationBlocObserver();
 
   runApp(
     Application(),
